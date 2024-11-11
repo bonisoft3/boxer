@@ -1,0 +1,3 @@
+dependencies: rust-lang.org/cargo buf.build@1.34.0
+env:
+  SAY_SCOOP_INSTALL: buf@1.34.0
