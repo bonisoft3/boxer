@@ -1,4 +1,6 @@
 [settings]
+locked = true
+github.slsa = false
 lockfile = true
 experimental = true
 paranoid = false
