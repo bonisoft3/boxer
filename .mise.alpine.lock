@@ -7,26 +7,31 @@ checksum = "blake3:af03bf1658558e3863817f8ec84919bf35b956b8046760f840a2844c8c7e2
 name = "buf-Linux-x86_64.tar.gz"
 size = 21282392
 url = "https://github.com/bufbuild/buf/releases/download/v1.34.0/buf-Linux-x86_64.tar.gz"
+url_api = "https://api.github.com/repos/bufbuild/buf/releases/assets/175190220"
 
 [tools."github:bufbuild/buf".platforms.linux-amd64]
 checksum = "sha256:82dcf1a5f45498b539a04d764e3cb274a13c8d94271c92508fc1624d227895ff"
 size = 21282392
 url = "https://github.com/bufbuild/buf/releases/download/v1.34.0/buf-Linux-x86_64.tar.gz"
+url_api = "https://api.github.com/repos/bufbuild/buf/releases/assets/175190220"
 
 [tools."github:bufbuild/buf".platforms.linux-arm64]
 checksum = "sha256:564d3ee76d93940addc15ba99b6ccc08b199c345800947a6d7f92e123aa62343"
 size = 19562323
 url = "https://github.com/bufbuild/buf/releases/download/v1.34.0/buf-Linux-aarch64.tar.gz"
+url_api = "https://api.github.com/repos/bufbuild/buf/releases/assets/175190217"
 
 [tools."github:bufbuild/buf".platforms.darwin-amd64]
 checksum = "sha256:6f07be0a8db1798fae85e19bbe6eb5618dadddff4be3e3d1e80a30d4f2a35d20"
 size = 21910673
 url = "https://github.com/bufbuild/buf/releases/download/v1.34.0/buf-Darwin-x86_64.tar.gz"
+url_api = "https://api.github.com/repos/bufbuild/buf/releases/assets/175190210"
 
 [tools."github:bufbuild/buf".platforms.darwin-arm64]
 checksum = "sha256:1a36e18b9aaaa69465d1a3b5fd061a9b6b9933ab93a71961824eba2afa0151fe"
 size = 20684310
 url = "https://github.com/bufbuild/buf/releases/download/v1.34.0/buf-Darwin-arm64.tar.gz"
+url_api = "https://api.github.com/repos/bufbuild/buf/releases/assets/175190212"
 
 [tools."github:bufbuild/buf".platforms.windows-amd64]
 checksum = "sha256:f51af381fd2f22534bf10d9c70c6f21e25afbd400833eec330cb05fada9199f5"
