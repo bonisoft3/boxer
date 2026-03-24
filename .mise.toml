@@ -11,5 +11,4 @@ aqua.slsa = false
 aqua.minisign = false
 
 [tools]
-rust = "1.86.0"
-"github:bufbuild/buf" = "1.66.1"
+rust = "1.88.0"

@@ -1,0 +1,5 @@
+say:
+  lint:
+    do: "cargo clippy -- -D warnings && cargo fmt --check"
+  launch:
+    do: "cargo run"
