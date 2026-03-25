@@ -3,3 +3,5 @@ say:
     do: "cargo clippy -- -D warnings && cargo fmt --check"
   launch:
     do: "cargo run"
+  release:
+    do: "goreleaser release --snapshot --clean"
