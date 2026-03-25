@@ -3,8 +3,13 @@ version: 2
 
 project_name: boxer
 
+before:
+  hooks:
+    - cargo build --release --target x86_64-unknown-linux-musl
+
 builds:
   - id: boxer
+    binary: boxer
     builder: prebuilt
     goos:
       - linux
