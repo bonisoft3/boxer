@@ -11,6 +11,7 @@ builds:
     command: build
     targets:
       - x86_64-unknown-linux-musl
+      - aarch64-unknown-linux-musl
     flags:
       - --release
 
@@ -18,12 +19,20 @@ archives:
   - id: default
     formats:
       - tar.gz
-    name_template: "boxer-linux-x64"
+    name_template: >-
+      boxer-linux-
+      {{- if eq .Arch "amd64" }}x64
+      {{- else if eq .Arch "arm64" }}arm64
+      {{- else }}{{ .Arch }}{{ end }}
 
   - id: bare
     formats:
       - binary
-    name_template: "boxer-linux-x64"
+    name_template: >-
+      boxer-linux-
+      {{- if eq .Arch "amd64" }}x64
+      {{- else if eq .Arch "arm64" }}arm64
+      {{- else }}{{ .Arch }}{{ end }}
 
 dockers:
   - id: boxer-amd64
@@ -32,13 +41,38 @@ dockers:
     goos: linux
     goarch: amd64
     image_templates:
-      - "ghcr.io/bonisoft3/boxer:{{ .Version }}"
-      - "ghcr.io/bonisoft3/boxer:latest"
+      - "ghcr.io/bonisoft3/boxer:{{ .Version }}-amd64"
+      - "ghcr.io/bonisoft3/boxer:latest-amd64"
     use: buildx
     dockerfile: Dockerfile
     build_flag_templates:
       - "--target=goreleaser"
       - "--platform=linux/amd64"
+
+  - id: boxer-arm64
+    ids:
+      - boxer
+    goos: linux
+    goarch: arm64
+    image_templates:
+      - "ghcr.io/bonisoft3/boxer:{{ .Version }}-arm64"
+      - "ghcr.io/bonisoft3/boxer:latest-arm64"
+    use: buildx
+    dockerfile: Dockerfile
+    build_flag_templates:
+      - "--target=goreleaser"
+      - "--platform=linux/arm64"
+
+docker_manifests:
+  - name_template: "ghcr.io/bonisoft3/boxer:{{ .Version }}"
+    image_templates:
+      - "ghcr.io/bonisoft3/boxer:{{ .Version }}-amd64"
+      - "ghcr.io/bonisoft3/boxer:{{ .Version }}-arm64"
+
+  - name_template: "ghcr.io/bonisoft3/boxer:latest"
+    image_templates:
+      - "ghcr.io/bonisoft3/boxer:latest-amd64"
+      - "ghcr.io/bonisoft3/boxer:latest-arm64"
 
 checksum:
   name_template: "checksums.txt"
