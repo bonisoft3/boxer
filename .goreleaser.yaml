@@ -14,6 +14,9 @@ builds:
       - aarch64-unknown-linux-musl
     flags:
       - --release
+    env:
+      - CC_aarch64_unknown_linux_musl=zig cc -target aarch64-linux-musl
+      - AR_aarch64_unknown_linux_musl=zig ar
 
 archives:
   - id: default
