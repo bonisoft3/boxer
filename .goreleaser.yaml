@@ -3,20 +3,16 @@ version: 2
 
 project_name: boxer
 
-before:
-  hooks:
-    - cargo build --release --target x86_64-unknown-linux-musl
-
 builds:
   - id: boxer
+    builder: rust
     binary: boxer
-    builder: prebuilt
-    goos:
-      - linux
-    goarch:
-      - amd64
-    prebuilt:
-      path: target/x86_64-unknown-linux-musl/release/boxer
+    dir: .
+    command: build
+    targets:
+      - x86_64-unknown-linux-musl
+    flags:
+      - --release
 
 archives:
   - id: default
