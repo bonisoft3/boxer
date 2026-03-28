@@ -3,25 +3,37 @@ version: 2
 
 project_name: boxer
 
+before:
+  hooks:
+    - cargo build --release --target x86_64-unknown-linux-musl
+    - cargo build --release --target aarch64-unknown-linux-musl
+
 builds:
-  - id: boxer
-    builder: rust
-    binary: boxer
-    dir: .
-    tool: cross
-    command: build
-    targets:
-      - x86_64-unknown-linux-musl
-      - aarch64-unknown-linux-musl
-    flags:
-      - --release
+  - id: boxer-amd64
+    builder: prebuilt
+    goos:
+      - linux
+    goarch:
+      - amd64
+    prebuilt:
+      path: target/x86_64-unknown-linux-musl/release/boxer
+
+  - id: boxer-arm64
+    builder: prebuilt
+    goos:
+      - linux
+    goarch:
+      - arm64
+    prebuilt:
+      path: target/aarch64-unknown-linux-musl/release/boxer
 
 archives:
   - id: default
     formats:
       - tar.gz
     name_template: >-
-      boxer-linux-
+      boxer-
+      {{- .Os }}-
       {{- if eq .Arch "amd64" }}x64
       {{- else if eq .Arch "arm64" }}arm64
       {{- else }}{{ .Arch }}{{ end }}
@@ -30,7 +42,8 @@ archives:
     formats:
       - binary
     name_template: >-
-      boxer-linux-
+      boxer-
+      {{- .Os }}-
       {{- if eq .Arch "amd64" }}x64
       {{- else if eq .Arch "arm64" }}arm64
       {{- else }}{{ .Arch }}{{ end }}
@@ -38,12 +51,14 @@ archives:
 dockers:
   - id: boxer-amd64
     ids:
-      - boxer
+      - boxer-amd64
     goos: linux
     goarch: amd64
     image_templates:
       - "ghcr.io/bonisoft3/boxer:{{ .Version }}-amd64"
       - "ghcr.io/bonisoft3/boxer:latest-amd64"
+      - "bonitao/boxer:{{ .Version }}-amd64"
+      - "bonitao/boxer:latest-amd64"
     use: buildx
     dockerfile: Dockerfile
     build_flag_templates:
@@ -52,12 +67,14 @@ dockers:
 
   - id: boxer-arm64
     ids:
-      - boxer
+      - boxer-arm64
     goos: linux
     goarch: arm64
     image_templates:
       - "ghcr.io/bonisoft3/boxer:{{ .Version }}-arm64"
       - "ghcr.io/bonisoft3/boxer:latest-arm64"
+      - "bonitao/boxer:{{ .Version }}-arm64"
+      - "bonitao/boxer:latest-arm64"
     use: buildx
     dockerfile: Dockerfile
     build_flag_templates:
@@ -74,6 +91,16 @@ docker_manifests:
     image_templates:
       - "ghcr.io/bonisoft3/boxer:latest-amd64"
       - "ghcr.io/bonisoft3/boxer:latest-arm64"
+
+  - name_template: "bonitao/boxer:{{ .Version }}"
+    image_templates:
+      - "bonitao/boxer:{{ .Version }}-amd64"
+      - "bonitao/boxer:{{ .Version }}-arm64"
+
+  - name_template: "bonitao/boxer:latest"
+    image_templates:
+      - "bonitao/boxer:latest-amd64"
+      - "bonitao/boxer:latest-arm64"
 
 checksum:
   name_template: "checksums.txt"
