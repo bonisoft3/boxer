@@ -1,14 +1,14 @@
 [settings]
 locked = true
 github.slsa = false
+github.github_attestations = false
 lockfile = true
 experimental = true
 paranoid = false
-github.github_attestations = false
 aqua.github_attestations = false
 aqua.cosign = false
 aqua.slsa = false
 aqua.minisign = false
 
 [tools]
-rust = "1.88.0"
+rust = "1.94.1"
