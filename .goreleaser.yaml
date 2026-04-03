@@ -115,3 +115,6 @@ release:
   mode: replace
   make_latest: true
   name_template: "boxer {{ .Version }}"
+
+changelog:
+  skip: true
