@@ -1,0 +1,12 @@
+tasks:
+  default:
+    deps:
+    - ::bayt:build
+    status:
+    - mise x -- nu {{.TASKFILE_DIR}}/../../../plugins/bayt/runtime/fingerprint.nu hash-check --manifest {{.TASKFILE_DIR}}/bayt.test.json
+    vars:
+      BAYTW: mise x -- nu {{.TASKFILE_DIR}}/../../../plugins/bayt/runtime/cache.nu run --manifest {{.TASKFILE_DIR}}/bayt.test.json -- mise x --
+    cmds:
+    - '{{.BAYTW}} cargo test --lib --bins'
+    - defer: '{{if not .EXIT_CODE}}mise x -- nu {{.TASKFILE_DIR}}/../../../plugins/bayt/runtime/fingerprint.nu hash-stamp --manifest {{.TASKFILE_DIR}}/bayt.test.json{{end}}'
+version: '3'

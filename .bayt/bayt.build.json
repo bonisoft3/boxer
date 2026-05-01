@@ -1,0 +1,93 @@
+{
+  "dockerfile": {
+    "preamble": [
+      "COPY --from=bonitao/lazybox:0.8.0@sha256:98414753b9ae2e90b096a1e3a9f7598ac2477e10fa3e5384083d9e29dde3c499 /lazybox/ /root/.local/share/lazybox/",
+      "ENV PATH=/root/.local/bin:/root/.local/share/lazybox/bin:$PATH",
+      "ENV MISE_TRUSTED_CONFIG_PATHS=/monorepo"
+    ],
+    "from": {
+      "ref": ":setup",
+      "name": "services_boxer-setup",
+      "context": "service:services_boxer-setup"
+    },
+    "mounts": [],
+    "secrets": [],
+    "epilogue": [],
+    "expose": [],
+    "entrypoint": null,
+    "incremental": false
+  },
+  "name": "build",
+  "project": "services_boxer",
+  "dir": "services/boxer",
+  "activate": "mise x --",
+  "srcs": {
+    "globs": [
+      "src/**/*",
+      "Cargo.toml",
+      "Cargo.lock"
+    ],
+    "exclude": []
+  },
+  "outs": {
+    "globs": [
+      "target/debug/boxer"
+    ],
+    "exclude": []
+  },
+  "env": {},
+  "taskfile": {
+    "run": "when_changed",
+    "silent": false,
+    "preconditions": []
+  },
+  "visibility": "internal",
+  "deps": [
+    "setup"
+  ],
+  "transitiveDeps": [
+    "setup"
+  ],
+  "transitiveCrossDeps": [],
+  "chainedDeps": [
+    {
+      "name": "setup",
+      "project": "services_boxer",
+      "dir": "services/boxer",
+      "outs": {
+        "globs": [],
+        "exclude": []
+      }
+    }
+  ],
+  "cmds": [
+    {
+      "srcs": {
+        "globs": [
+          "src/**/*",
+          "Cargo.toml",
+          "Cargo.lock"
+        ],
+        "exclude": [],
+        "defaultGlobs": null,
+        "defaultExclude": null
+      },
+      "do": "cargo build",
+      "name": "builtin",
+      "shell": "exec",
+      "stop": false
+    }
+  ],
+  "cache": {
+    "full": false,
+    "similar": false
+  },
+  "vscode": {
+    "group": {
+      "kind": "build",
+      "isDefault": true
+    },
+    "dependsOn": [],
+    "dependsOrder": "sequence"
+  }
+}

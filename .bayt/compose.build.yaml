@@ -1,0 +1,8 @@
+services:
+  services_boxer-build:
+    build:
+      additional_contexts:
+        services_boxer-setup: service:services_boxer-setup
+      context: ..
+      dockerfile: .bayt/Dockerfile.build
+      target: build

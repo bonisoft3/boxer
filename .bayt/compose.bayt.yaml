@@ -1,0 +1,7 @@
+include:
+- path: ./compose.setup.yaml
+  required: false
+- path: ./compose.build.yaml
+  required: false
+- path: ./compose.integrate.yaml
+  required: false

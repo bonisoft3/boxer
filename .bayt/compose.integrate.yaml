@@ -1,0 +1,8 @@
+services:
+  services_boxer-integrate:
+    build:
+      additional_contexts:
+        services_boxer-build: service:services_boxer-build
+      context: ..
+      dockerfile: .bayt/Dockerfile.integrate
+      target: integrate

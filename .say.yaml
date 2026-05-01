@@ -5,3 +5,9 @@ say:
     do: "cargo run"
   release:
     do: "goreleaser release --snapshot --clean"
+  # `cargo test --tests` is pure cargo (no docker socket), so the
+  # integrate stage's RUN runs the tests directly and bake's exit
+  # code is the verdict. Container builder skips per-stage docker
+  # image loads since nothing here needs to be loaded for runtime.
+  integrate:
+    args: "--bake --builder container"
