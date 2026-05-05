@@ -1,10 +1,11 @@
 # syntax=docker/dockerfile:1.7-labs@sha256:b99fecfe00268a8b556fad7d9c37ee25d716ae08a5d7320e6d51c4dd83246894
-FROM opensuse/leap:15.6@sha256:99c3ce36da52de669d5fd6663528438b0579cafa7efeab2e9e6d610a3c4b6c9e AS setup
+FROM opensuse/leap:16.0@sha256:859560554b625c225fa767b76d61253d529b95d082c2d68579ad69168d5e3da7 AS setup
 WORKDIR /monorepo/services/boxer
-COPY --from=bonitao/lazybox:0.8.0@sha256:98414753b9ae2e90b096a1e3a9f7598ac2477e10fa3e5384083d9e29dde3c499 /lazybox/ /root/.local/share/lazybox/
+COPY --from=bonitao/lazybox:0.8.2@sha256:334bf59aeae6ca3228d5308d33a02f47a00fc7ebcdcc38af5bab16613152bb82 /lazybox/ /root/.local/share/lazybox/
 ENV PATH=/root/.local/bin:/root/.local/share/lazybox/bin:$PATH
 ENV MISE_TRUSTED_CONFIG_PATHS=/monorepo
-RUN zypper -n install gcc
+RUN zypper -n install findutils=4.10.0-160000.2.2 which=2.23-160000.2.2
+RUN zypper -n install gcc=15-160000.2.2
 COPY --link --parents .mise.toml mise.lock ./
 RUN ["mise", "install"]
 COPY --link Taskfile.yml ./Taskfile.yml

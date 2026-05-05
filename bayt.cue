@@ -25,14 +25,12 @@ _boxer: bayt.#project & {
 
 	targets: {
 		"setup": sayt.setup & mise.install & {
-			// Rust crates pull a C linker via build scripts (log,
-			// proc-macro2, aws-lc-rs, etc.). The opensuse/leap base
-			// has no `cc` by default, so install gcc here — build
-			// chains FROM :setup, so it propagates to cargo build /
-			// cargo test stages without an extra layer.
+			// gcc for rust crates with C build scripts (log, proc-macro2,
+			// aws-lc-rs, ...); opensuse/leap base has no `cc` by default.
+			// build/test/integrate FROM-chain off setup and inherit it.
 			dockerfile: bayt.nubox
 			dockerfile: preamble: [
-				"RUN zypper -n install gcc",
+				"RUN zypper -n install gcc=15-160000.2.2",
 			]
 		}
 		"doctor": sayt.doctor & mise.doctor
@@ -48,10 +46,7 @@ _boxer: bayt.#project & {
 			srcs: globs: ["src/**/*", "Cargo.toml", "Cargo.lock"]
 			outs: globs: ["target/debug/boxer"]
 			cmd: "builtin": do: "cargo build"
-			dockerfile: {
-				bayt.nubox
-				from: ref: ":setup"
-			}
+			dockerfile: from: ref: ":setup"
 		}
 
 		// Unit tests = `cargo test --lib --bins`. Skips integration
@@ -72,7 +67,6 @@ _boxer: bayt.#project & {
 			srcs: globs: ["tests/**/*"]
 			outs: globs: ["target/debug/deps/*-*"]
 			dockerfile: {
-				bayt.nubox
 				secrets: []
 				from: ref: ":build"
 			}
