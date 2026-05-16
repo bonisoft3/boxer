@@ -1,7 +1,7 @@
 {
   "dockerfile": {
     "preamble": [
-      "COPY --from=bonitao/lazybox:0.8.2@sha256:334bf59aeae6ca3228d5308d33a02f47a00fc7ebcdcc38af5bab16613152bb82 /lazybox/ /root/.local/share/lazybox/",
+      "COPY --from=bonitao/lazybox:0.8.3@sha256:c896a6836673d8fd217f6021a2522351fd82d580ed985159feb2f10373018e73 /lazybox/ /root/.local/share/lazybox/",
       "ENV PATH=/root/.local/bin:/root/.local/share/lazybox/bin:$PATH",
       "ENV MISE_TRUSTED_CONFIG_PATHS=/monorepo",
       "RUN zypper -n install findutils=4.10.0-160000.2.2 which=2.23-160000.2.2",

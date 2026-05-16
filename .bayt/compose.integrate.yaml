@@ -6,3 +6,4 @@ services:
       context: ..
       dockerfile: .bayt/Dockerfile.integrate
       target: integrate
+    image: bayt-services_boxer-integrate:latest

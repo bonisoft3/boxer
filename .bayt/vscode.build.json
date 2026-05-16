@@ -6,7 +6,7 @@
         "kind": "build",
         "isDefault": true
       },
-      "label": "services_boxer build",
+      "label": "build",
       "type": "shell",
       "command": "task bayt:build",
       "options": {

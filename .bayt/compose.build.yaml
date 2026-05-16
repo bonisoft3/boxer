@@ -6,3 +6,4 @@ services:
       context: ..
       dockerfile: .bayt/Dockerfile.build
       target: build
+    image: bayt-services_boxer-build:latest
