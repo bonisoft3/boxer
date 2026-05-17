@@ -7,13 +7,14 @@
   },
   "dockerfile": {
     "preamble": [],
-    "secrets": [],
     "from": {
       "ref": ":build",
       "name": "services_boxer-build",
       "context": "service:services_boxer-build"
     },
     "mounts": [],
+    "secrets": {},
+    "extra_hosts": [],
     "epilogue": [],
     "copy": [],
     "healthcheck": null,

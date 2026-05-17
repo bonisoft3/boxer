@@ -67,7 +67,6 @@ _boxer: bayt.#project & {
 			srcs: globs: ["tests/**/*"]
 			outs: globs: ["target/debug/deps/*-*"]
 			dockerfile: {
-				secrets: []
 				from: ref: ":build"
 			}
 			cmd: "builtin": {
