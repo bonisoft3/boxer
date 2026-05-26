@@ -1,8 +1,6 @@
 services:
   services_boxer-setup:
     build:
-      additional_contexts:
-        opensuse/leap:16.0@sha256:859560554b625c225fa767b76d61253d529b95d082c2d68579ad69168d5e3da7: docker-image://opensuse/leap:16.0@sha256:859560554b625c225fa767b76d61253d529b95d082c2d68579ad69168d5e3da7
       context: ..
       dockerfile: .bayt/Dockerfile.setup
       target: setup

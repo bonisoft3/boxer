@@ -8,8 +8,7 @@
       "RUN zypper -n install gcc=15-160000.2.2"
     ],
     "from": {
-      "name": "opensuse/leap:16.0@sha256:859560554b625c225fa767b76d61253d529b95d082c2d68579ad69168d5e3da7",
-      "context": "docker-image://opensuse/leap:16.0@sha256:859560554b625c225fa767b76d61253d529b95d082c2d68579ad69168d5e3da7"
+      "name": "opensuse/leap:16.0@sha256:859560554b625c225fa767b76d61253d529b95d082c2d68579ad69168d5e3da7"
     },
     "mounts": [],
     "secrets": {},

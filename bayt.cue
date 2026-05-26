@@ -69,10 +69,7 @@ _boxer: bayt.#project & {
 			dockerfile: {
 				from: ref: ":build"
 			}
-			cmd: "builtin": {
-				do: "cargo test --tests"
-				dockerfile: wrap: ""
-			}
+			cmd: "builtin": do: "cargo test --tests"
 		}
 
 		"generate": sayt.generate & {cmd: "builtin": do: "true"}

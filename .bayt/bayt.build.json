@@ -3,8 +3,7 @@
     "preamble": [],
     "from": {
       "ref": ":setup",
-      "name": "services_boxer-setup",
-      "context": "service:services_boxer-setup"
+      "name": "services_boxer-setup"
     },
     "mounts": [],
     "secrets": {},

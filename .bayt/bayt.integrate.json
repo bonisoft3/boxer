@@ -9,8 +9,7 @@
     "preamble": [],
     "from": {
       "ref": ":build",
-      "name": "services_boxer-build",
-      "context": "service:services_boxer-build"
+      "name": "services_boxer-build"
     },
     "mounts": [],
     "secrets": {},
@@ -78,9 +77,6 @@
         "defaultExclude": null
       },
       "do": "cargo test --tests",
-      "dockerfile": {
-        "wrap": ""
-      },
       "name": "builtin",
       "shell": "exec",
       "stop": false
