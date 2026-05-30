@@ -2,7 +2,7 @@ services:
   services_boxer-build:
     build:
       additional_contexts:
-        bayt-runtime: ${BAYT_RUNTIME:-docker-image://bonitao/bayt:0.5.0@sha256:29447e97c3634b048e06fc39bab2d227128d6eb96a69b4560911499586830492}
+        bayt-runtime: ../../../plugins/bayt
         services_boxer-setup: service:services_boxer-setup
       context: ..
       dockerfile: .bayt/Dockerfile.build
