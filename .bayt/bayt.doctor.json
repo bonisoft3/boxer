@@ -15,6 +15,7 @@
   "taskfile": {
     "run": "always",
     "silent": false,
+    "incremental": true,
     "preconditions": []
   },
   "visibility": "internal",

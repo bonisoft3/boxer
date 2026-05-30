@@ -1,10 +1,10 @@
 tasks:
   default:
     status:
-    - mise x -- nu {{.TASKFILE_DIR}}/../../../plugins/bayt/runtime/fingerprint.nu --manifest {{.TASKFILE_DIR}}/bayt.setup.json --stamp-file .task/bayt/setup.hash
+    - bayt fingerprint --manifest {{.TASKFILE_DIR}}/bayt.setup.json --stamp-file .task/bayt/setup.hash
     vars:
-      BAYTW: mise x -- nu {{.TASKFILE_DIR}}/../../../plugins/bayt/runtime/cache.nu run --manifest {{.TASKFILE_DIR}}/bayt.setup.json --
+      BAYTW: bayt cache run --manifest {{.TASKFILE_DIR}}/bayt.setup.json --
     cmds:
     - '{{.BAYTW}} mise install'
-    - defer: '{{if not .EXIT_CODE}}mise x -- nu {{.TASKFILE_DIR}}/../../../plugins/bayt/runtime/fingerprint.nu --manifest {{.TASKFILE_DIR}}/bayt.setup.json --stamp-file .task/bayt/setup.hash --update-stamp{{end}}'
+    - defer: '{{if not .EXIT_CODE}}bayt fingerprint --manifest {{.TASKFILE_DIR}}/bayt.setup.json --stamp-file .task/bayt/setup.hash --update-stamp{{end}}'
 version: '3'

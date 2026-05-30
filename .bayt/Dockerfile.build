@@ -2,6 +2,8 @@
 FROM services_boxer-setup AS build
 WORKDIR /monorepo/services/boxer
 COPY --link --parents src/**/* Cargo.toml Cargo.lock ./
+COPY --from=bayt-runtime --link . /monorepo/plugins/bayt/
+ENV PATH=/monorepo/plugins/bayt/bin:${PATH}
 RUN ["mise", "x", "--", "cargo", "build"]
 COPY --link Taskfile.yml ./Taskfile.yml
 COPY --link .bayt/Taskfile.yml .bayt/Taskfile.build.yaml .bayt/bayt.build.json .bayt/init.gradle.kts ./.bayt/
