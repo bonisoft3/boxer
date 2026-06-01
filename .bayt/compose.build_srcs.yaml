@@ -1,0 +1,7 @@
+services:
+  services_boxer-build_srcs:
+    build:
+      context: ..
+      dockerfile: .bayt/Dockerfile.build_srcs
+      target: build_srcs
+    image: bayt-services_boxer-build_srcs:latest

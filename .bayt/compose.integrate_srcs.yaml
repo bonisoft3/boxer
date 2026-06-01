@@ -1,0 +1,9 @@
+services:
+  services_boxer-integrate_srcs:
+    build:
+      additional_contexts:
+        services_boxer-build_srcs: service:services_boxer-build_srcs
+      context: ..
+      dockerfile: .bayt/Dockerfile.integrate_srcs
+      target: integrate_srcs
+    image: bayt-services_boxer-integrate_srcs:latest

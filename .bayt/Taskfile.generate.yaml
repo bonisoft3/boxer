@@ -1,10 +1,10 @@
 tasks:
   default:
     status:
-    - bayt fingerprint --manifest {{.TASKFILE_DIR}}/bayt.generate.json --stamp-file .task/bayt/generate.hash
+    - ../../plugins/bayt/runtime/bayt fingerprint --manifest {{.TASKFILE_DIR}}/bayt.generate.json --stamp-file .task/bayt/generate.hash
     vars:
-      BAYTW: bayt cache run --manifest {{.TASKFILE_DIR}}/bayt.generate.json -- mise x --
+      BAYTW: ../../plugins/bayt/runtime/bayt cache run --manifest {{.TASKFILE_DIR}}/bayt.generate.json -- mise x --
     cmds:
     - '{{.BAYTW}} true'
-    - defer: '{{if not .EXIT_CODE}}bayt fingerprint --manifest {{.TASKFILE_DIR}}/bayt.generate.json --stamp-file .task/bayt/generate.hash --update-stamp{{end}}'
+    - defer: '{{if not .EXIT_CODE}}../../plugins/bayt/runtime/bayt fingerprint --manifest {{.TASKFILE_DIR}}/bayt.generate.json --stamp-file .task/bayt/generate.hash --update-stamp{{end}}'
 version: '3'

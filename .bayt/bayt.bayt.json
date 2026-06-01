@@ -1,0 +1,33 @@
+{
+  "name": "bayt",
+  "project": "services_boxer",
+  "dir": "services/boxer",
+  "activate": "",
+  "srcs": {
+    "globs": [
+      ".bayt/**",
+      "Taskfile.yml",
+      "compose.yaml"
+    ],
+    "exclude": []
+  },
+  "outs": {
+    "globs": [
+      ".bayt/**",
+      "Taskfile.yml",
+      "compose.yaml"
+    ],
+    "exclude": []
+  },
+  "env": {},
+  "visibility": "public",
+  "deps": [],
+  "transitiveDeps": [],
+  "transitiveCrossDeps": [],
+  "chainedDeps": [],
+  "cmds": [],
+  "cache": {
+    "full": false,
+    "similar": false
+  }
+}

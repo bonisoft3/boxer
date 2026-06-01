@@ -3,3 +3,9 @@ include:
   required: false
 - path: ./compose.build.yaml
   required: false
+- path: ./compose.build_srcs.yaml
+  required: false
+- path: ./compose.build_outs.yaml
+  required: false
+- path: ./compose._bayt.yaml
+  required: false

@@ -1,0 +1,4 @@
+# syntax=docker/dockerfile:1.7-labs@sha256:b99fecfe00268a8b556fad7d9c37ee25d716ae08a5d7320e6d51c4dd83246894
+FROM scratch AS integrate_outs
+WORKDIR /monorepo/services/boxer
+COPY --from=services_boxer-integrate --link --parents /monorepo/services/boxer/target/debug/deps/*-* /

@@ -1,0 +1,9 @@
+services:
+  services_boxer-build_outs:
+    build:
+      context: ..
+      dockerfile: .bayt/Dockerfile.build_outs
+      target: build_outs
+      additional_contexts:
+        services_boxer-build: service:services_boxer-build
+    image: bayt-services_boxer-build_outs:latest

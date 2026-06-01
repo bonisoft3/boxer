@@ -2,8 +2,6 @@
 FROM services_boxer-build AS integrate
 WORKDIR /monorepo/services/boxer
 COPY --link --parents tests/**/* ./
-COPY --from=bayt-runtime --link . /monorepo/plugins/bayt/
-ENV PATH=/monorepo/plugins/bayt/bin:${PATH}
 RUN ["mise", "x", "--", "cargo", "test", "--tests"]
 COPY --link Taskfile.yml ./Taskfile.yml
 COPY --link .bayt/Taskfile.yml .bayt/Taskfile.integrate.yaml .bayt/bayt.integrate.json .bayt/init.gradle.kts ./.bayt/

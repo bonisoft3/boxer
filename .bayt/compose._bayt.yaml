@@ -1,0 +1,7 @@
+services:
+  services_boxer-bayt:
+    build:
+      context: ..
+      dockerfile: .bayt/Dockerfile._bayt
+      target: bayt
+    image: bayt-services_boxer-bayt:latest

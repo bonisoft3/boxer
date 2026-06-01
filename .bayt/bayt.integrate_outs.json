@@ -1,0 +1,27 @@
+{
+  "name": "integrate_outs",
+  "project": "services_boxer",
+  "dir": "services/boxer",
+  "activate": "",
+  "srcs": {
+    "globs": [],
+    "exclude": []
+  },
+  "outs": {
+    "globs": [
+      "target/debug/deps/*-*"
+    ],
+    "exclude": []
+  },
+  "env": {},
+  "visibility": "internal",
+  "deps": [],
+  "transitiveDeps": [],
+  "transitiveCrossDeps": [],
+  "chainedDeps": [],
+  "cmds": [],
+  "cache": {
+    "full": false,
+    "similar": false
+  }
+}
