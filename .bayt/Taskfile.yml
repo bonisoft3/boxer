@@ -1,3 +1,4 @@
+# generated from bayt.cue — do not edit
 includes:
   setup:
     taskfile: ./Taskfile.setup.yaml

@@ -1,4 +1,5 @@
 {
+  "_generated_from": "bayt.cue (do not edit)",
   "compose": {
     "environment": {},
     "ports": [],

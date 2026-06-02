@@ -1,3 +1,4 @@
+# generated from bayt.cue — do not edit
 tasks:
   default:
     status:

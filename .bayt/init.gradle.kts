@@ -1,3 +1,4 @@
+// generated from bayt.cue — do not edit
 settingsEvaluated {
     // Resolution mirrors cache.nu local-root:
     //   1. $BAYT_CACHE_DIR (explicit override)

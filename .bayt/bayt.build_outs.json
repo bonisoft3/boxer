@@ -1,4 +1,5 @@
 {
+  "_generated_from": "bayt.cue (do not edit)",
   "name": "build_outs",
   "project": "services_boxer",
   "dir": "services/boxer",

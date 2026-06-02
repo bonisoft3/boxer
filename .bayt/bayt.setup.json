@@ -1,4 +1,5 @@
 {
+  "_generated_from": "bayt.cue (do not edit)",
   "dockerfile": {
     "preamble": [
       "COPY --from=bonitao/lazybox:0.8.3@sha256:c896a6836673d8fd217f6021a2522351fd82d580ed985159feb2f10373018e73 /lazybox/ /root/.local/share/lazybox/",
