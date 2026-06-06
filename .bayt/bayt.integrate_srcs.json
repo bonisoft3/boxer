@@ -17,8 +17,25 @@
   "env": {},
   "visibility": "internal",
   "deps": [],
-  "transitiveDeps": [],
-  "transitiveCrossDeps": [],
+  "transitiveDeps": [
+    "build_srcs",
+    "setup_srcs"
+  ],
+  "transitiveCrossDeps": [
+    {
+      "project": "services_boxer",
+      "name": "build_srcs",
+      "dir": "services/boxer",
+      "outs": {
+        "globs": [
+          "src/**/*",
+          "Cargo.toml",
+          "Cargo.lock"
+        ],
+        "exclude": []
+      }
+    }
+  ],
   "chainedDeps": [],
   "cmds": [],
   "cache": {

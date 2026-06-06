@@ -19,7 +19,9 @@
   "env": {},
   "visibility": "internal",
   "deps": [],
-  "transitiveDeps": [],
+  "transitiveDeps": [
+    "setup_srcs"
+  ],
   "transitiveCrossDeps": [],
   "chainedDeps": [],
   "cmds": [],

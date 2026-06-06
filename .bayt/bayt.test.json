@@ -43,6 +43,15 @@
         ],
         "exclude": []
       }
+    },
+    {
+      "name": "setup",
+      "project": "services_boxer",
+      "dir": "services/boxer",
+      "outs": {
+        "globs": [],
+        "exclude": []
+      }
     }
   ],
   "cmds": [

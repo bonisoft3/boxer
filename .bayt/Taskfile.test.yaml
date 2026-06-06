@@ -3,6 +3,7 @@ tasks:
   default:
     deps:
     - ::bayt:build
+    - ::bayt:setup
     status:
     - ../../plugins/bayt/runtime/bayt fingerprint --manifest {{.TASKFILE_DIR}}/bayt.test.json --stamp-file .task/bayt/test.hash
     vars:
