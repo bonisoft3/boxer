@@ -50,8 +50,9 @@
     {
       "srcs": {
         "globs": [
-          ".mise.toml",
-          "mise.lock"
+          "[m]ise.toml",
+          "[.]mise.toml",
+          "[m]ise.lock"
         ],
         "exclude": [],
         "defaultGlobs": null,

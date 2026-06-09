@@ -7,7 +7,7 @@ ENV PATH=/root/.local/bin:/root/.local/share/lazybox/bin:$PATH
 ENV MISE_TRUSTED_CONFIG_PATHS=/monorepo
 RUN zypper -n install findutils=4.10.0-160000.2.2 which=2.23-160000.2.2
 RUN zypper -n install gcc=15-160000.2.2
-COPY --link --parents .mise.toml mise.lock ./
+COPY --link --parents [m]ise.toml [.]mise.toml [m]ise.lock ./
 RUN ["mise", "install"]
 COPY --link Taskfile.yml ./Taskfile.yml
 COPY --link .bayt/Taskfile.yml .bayt/Taskfile.setup.yaml .bayt/bayt.setup.json .bayt/init.gradle.kts ./.bayt/
