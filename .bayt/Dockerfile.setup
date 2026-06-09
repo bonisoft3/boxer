@@ -1,4 +1,3 @@
-# syntax=docker/dockerfile:1.7-labs@sha256:b99fecfe00268a8b556fad7d9c37ee25d716ae08a5d7320e6d51c4dd83246894
 # generated from bayt.cue — do not edit
 FROM opensuse/leap:16.0@sha256:859560554b625c225fa767b76d61253d529b95d082c2d68579ad69168d5e3da7 AS setup
 WORKDIR /monorepo/services/boxer
