@@ -5,4 +5,10 @@ services:
       context: ..
       dockerfile: .bayt/Dockerfile.setup
       target: setup
+      x-bake:
+        cache-from:
+        - type=registry,ref=ghcr.io/worldsense/trash/boxer-cache:v1-${CACHE_SCOPE:-unscoped}-services_boxer-setup
+        - type=registry,ref=ghcr.io/worldsense/trash/boxer-cache:v1-${CACHE_SCOPE_FALLBACK:-unscoped}-services_boxer-setup
+        cache-to:
+        - type=registry,ref=ghcr.io/worldsense/trash/boxer-cache:v1-${CACHE_SCOPE:-unscoped}-services_boxer-setup,mode=min,image-manifest=true,oci-mediatypes=true
     image: bayt-services_boxer-setup:latest

@@ -1,5 +1,20 @@
 {
   "_generated_from": "bayt.cue (do not edit)",
+  "bake": {
+    "push": false,
+    "platforms": [],
+    "tags": [],
+    "args": {},
+    "cache": {
+      "from": [
+        "type=registry,ref=ghcr.io/worldsense/trash/boxer-cache:v1-${CACHE_SCOPE:-unscoped}-services_boxer-generate",
+        "type=registry,ref=ghcr.io/worldsense/trash/boxer-cache:v1-${CACHE_SCOPE_FALLBACK:-unscoped}-services_boxer-generate"
+      ],
+      "to": [
+        "type=registry,ref=ghcr.io/worldsense/trash/boxer-cache:v1-${CACHE_SCOPE:-unscoped}-services_boxer-generate,mode=min,image-manifest=true,oci-mediatypes=true"
+      ]
+    }
+  },
   "name": "generate",
   "project": "services_boxer",
   "dir": "services/boxer",

@@ -23,6 +23,12 @@ _boxer: bayt.#project & {
 	dir:      "services/boxer"
 	activate: "mise x --"
 
+	bake: cache: {
+		type:     "registry"
+		registry: "ghcr.io/worldsense/trash/boxer-cache"
+		scope:    "v1"
+	}
+
 	targets: {
 		"setup": sayt.setup & mise.install & {
 			// gcc for rust crates with C build scripts (log, proc-macro2,
