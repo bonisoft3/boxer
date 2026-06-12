@@ -11,4 +11,4 @@ services:
         - type=registry,ref=ghcr.io/worldsense/trash/boxer-cache:v1-${CACHE_SCOPE_FALLBACK:-unscoped}-services_boxer-setup
         cache-to:
         - type=registry,ref=ghcr.io/worldsense/trash/boxer-cache:v1-${CACHE_SCOPE:-unscoped}-services_boxer-setup,mode=min,image-manifest=true,oci-mediatypes=true
-    image: bayt-services_boxer-setup:latest
+    image: bayt-services_boxer-setup:${BAYT_IMAGE_TAG:-latest}

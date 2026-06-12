@@ -15,4 +15,4 @@ services:
         - type=registry,ref=ghcr.io/worldsense/trash/boxer-cache:v1-${CACHE_SCOPE:-unscoped}-services_boxer-integrate,mode=min,image-manifest=true,oci-mediatypes=true
         output:
         - type=docker
-    image: bayt-services_boxer-integrate:latest
+    image: bayt-services_boxer-integrate:${BAYT_IMAGE_TAG:-latest}
