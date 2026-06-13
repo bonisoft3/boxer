@@ -3,10 +3,10 @@ tasks:
   default:
     run: always
     status:
-    - bayt fingerprint --manifest {{.TASKFILE_DIR}}/bayt.doctor.json --stamp-file .task/bayt/doctor.hash
+    - ../../plugins/bayt/runtime/bayt fingerprint --manifest {{.TASKFILE_DIR}}/bayt.doctor.json --stamp-file .task/bayt/doctor.hash
     vars:
-      BAYTW: bayt cache run --manifest {{.TASKFILE_DIR}}/bayt.doctor.json --
+      BAYTW: ../../plugins/bayt/runtime/bayt cache run --manifest {{.TASKFILE_DIR}}/bayt.doctor.json --
     cmds:
     - '{{.BAYTW}} mise doctor'
-    - defer: '{{if not .EXIT_CODE}}bayt fingerprint --manifest {{.TASKFILE_DIR}}/bayt.doctor.json --stamp-file .task/bayt/doctor.hash --update-stamp{{end}}'
+    - defer: '{{if not .EXIT_CODE}}../../plugins/bayt/runtime/bayt fingerprint --manifest {{.TASKFILE_DIR}}/bayt.doctor.json --stamp-file .task/bayt/doctor.hash --update-stamp{{end}}'
 version: '3'
