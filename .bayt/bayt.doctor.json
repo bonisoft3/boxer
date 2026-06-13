@@ -7,11 +7,11 @@
     "args": {},
     "cache": {
       "from": [
-        "type=registry,ref=ghcr.io/worldsense/trash/boxer-cache:v1-${CACHE_SCOPE:-unscoped}-services_boxer-doctor",
-        "type=registry,ref=ghcr.io/worldsense/trash/boxer-cache:v1-${CACHE_SCOPE_FALLBACK:-unscoped}-services_boxer-doctor"
+        "type=registry,ref=ghcr.io/worldsense/trash/boxer-cache:v1-${CACHE_SCOPE:-unscoped}-doctor",
+        "type=registry,ref=ghcr.io/worldsense/trash/boxer-cache:v1-${CACHE_SCOPE_FALLBACK:-unscoped}-doctor"
       ],
       "to": [
-        "type=registry,ref=ghcr.io/worldsense/trash/boxer-cache:v1-${CACHE_SCOPE:-unscoped}-services_boxer-doctor,mode=min,image-manifest=true,oci-mediatypes=true"
+        "type=registry,ref=ghcr.io/worldsense/trash/boxer-cache:v1-${CACHE_SCOPE:-unscoped}-doctor,mode=min,image-manifest=true,oci-mediatypes=true"
       ]
     }
   },

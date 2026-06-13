@@ -9,8 +9,8 @@ services:
       target: build
       x-bake:
         cache-from:
-        - type=registry,ref=ghcr.io/worldsense/trash/boxer-cache:v1-${CACHE_SCOPE:-unscoped}-services_boxer-build
-        - type=registry,ref=ghcr.io/worldsense/trash/boxer-cache:v1-${CACHE_SCOPE_FALLBACK:-unscoped}-services_boxer-build
+        - type=registry,ref=ghcr.io/worldsense/trash/boxer-cache:v1-${CACHE_SCOPE:-unscoped}-build
+        - type=registry,ref=ghcr.io/worldsense/trash/boxer-cache:v1-${CACHE_SCOPE_FALLBACK:-unscoped}-build
         cache-to:
-        - type=registry,ref=ghcr.io/worldsense/trash/boxer-cache:v1-${CACHE_SCOPE:-unscoped}-services_boxer-build,mode=min,image-manifest=true,oci-mediatypes=true
+        - type=registry,ref=ghcr.io/worldsense/trash/boxer-cache:v1-${CACHE_SCOPE:-unscoped}-build,mode=min,image-manifest=true,oci-mediatypes=true
     image: bayt-services_boxer-build:${BAYT_IMAGE_TAG:-latest}

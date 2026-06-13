@@ -7,11 +7,11 @@
     "args": {},
     "cache": {
       "from": [
-        "type=registry,ref=ghcr.io/worldsense/trash/boxer-cache:v1-${CACHE_SCOPE:-unscoped}-services_boxer-test",
-        "type=registry,ref=ghcr.io/worldsense/trash/boxer-cache:v1-${CACHE_SCOPE_FALLBACK:-unscoped}-services_boxer-test"
+        "type=registry,ref=ghcr.io/worldsense/trash/boxer-cache:v1-${CACHE_SCOPE:-unscoped}-test",
+        "type=registry,ref=ghcr.io/worldsense/trash/boxer-cache:v1-${CACHE_SCOPE_FALLBACK:-unscoped}-test"
       ],
       "to": [
-        "type=registry,ref=ghcr.io/worldsense/trash/boxer-cache:v1-${CACHE_SCOPE:-unscoped}-services_boxer-test,mode=min,image-manifest=true,oci-mediatypes=true"
+        "type=registry,ref=ghcr.io/worldsense/trash/boxer-cache:v1-${CACHE_SCOPE:-unscoped}-test,mode=min,image-manifest=true,oci-mediatypes=true"
       ]
     }
   },
