@@ -1,4 +1,7 @@
 # generated from bayt.cue — do not edit
+include:
+- path: ./compose.setup.yaml
+  required: false
 services:
   services_boxer-build:
     build:

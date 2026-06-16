@@ -8,3 +8,6 @@ services:
       additional_contexts:
         services_boxer-integrate: service:services_boxer-integrate
     image: bayt-services_boxer-integrate_outs:latest
+include:
+- path: ./compose.integrate.yaml
+  required: false
