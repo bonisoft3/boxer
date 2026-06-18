@@ -1,0 +1,6 @@
+# generated from bayt.cue — do not edit
+include:
+- path: ./compose.integrate_outs.yaml
+  required: false
+- path: ./compose.integrate.closure.yaml
+  required: false

@@ -8,6 +8,3 @@ services:
       additional_contexts:
         services_boxer-build: service:services_boxer-build
     image: bayt-services_boxer-build_outs:latest
-include:
-- path: ./compose.build.yaml
-  required: false
