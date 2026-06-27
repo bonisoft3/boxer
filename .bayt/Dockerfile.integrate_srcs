@@ -1,5 +1,5 @@
 # generated from bayt.cue — do not edit
 FROM scratch AS integrate_srcs
 WORKDIR /monorepo/services/boxer
-COPY --link --parents tests/**/* ./
+COPY --parents tests/**/* ./
 COPY --link --from=services_boxer-build_srcs /monorepo /monorepo

@@ -5,4 +5,10 @@ services:
       context: ..
       dockerfile: .bayt/Dockerfile.build_srcs
       target: build_srcs
+      x-bake:
+        cache-from:
+        - type=registry,ref=ghcr.io/worldsense/trash/boxer-cache:v1-${CACHE_SCOPE:-unscoped}-build_srcs
+        - type=registry,ref=ghcr.io/worldsense/trash/boxer-cache:v1-${CACHE_SCOPE_FALLBACK:-unscoped}-build_srcs
+        cache-to:
+        - type=registry,ref=ghcr.io/worldsense/trash/boxer-cache:v1-${CACHE_SCOPE:-unscoped}-build_srcs,mode=min,image-manifest=true,oci-mediatypes=true
     image: bayt-services_boxer-build_srcs:latest

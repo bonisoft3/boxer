@@ -1,4 +1,4 @@
 # generated from bayt.cue — do not edit
 FROM scratch AS build_srcs
 WORKDIR /monorepo/services/boxer
-COPY --link --parents src/**/* Cargo.toml Cargo.lock ./
+COPY --parents src/**/* Cargo.toml Cargo.lock ./
