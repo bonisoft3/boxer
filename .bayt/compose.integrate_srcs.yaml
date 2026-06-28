@@ -7,10 +7,4 @@ services:
       context: ..
       dockerfile: .bayt/Dockerfile.integrate_srcs
       target: integrate_srcs
-      x-bake:
-        cache-from:
-        - type=registry,ref=ghcr.io/worldsense/trash/boxer-cache:v1-${CACHE_SCOPE:-unscoped}-integrate_srcs
-        - type=registry,ref=ghcr.io/worldsense/trash/boxer-cache:v1-${CACHE_SCOPE_FALLBACK:-unscoped}-integrate_srcs
-        cache-to:
-        - type=registry,ref=ghcr.io/worldsense/trash/boxer-cache:v1-${CACHE_SCOPE:-unscoped}-integrate_srcs,mode=min,image-manifest=true,oci-mediatypes=true
     image: bayt-services_boxer-integrate_srcs:latest
