@@ -5,10 +5,10 @@ tasks:
     - ::bayt:build
     - ::bayt:setup
     status:
-    - bayt fingerprint --manifest {{.TASKFILE_DIR}}/bayt.test.json --stamp-file .task/bayt/test.hash
+    - ../../plugins/bayt/runtime/bayt fingerprint --manifest {{.TASKFILE_DIR}}/bayt.test.json --stamp-file .task/bayt/test.hash
     vars:
-      BAYTW: bayt cache run --manifest {{.TASKFILE_DIR}}/bayt.test.json -- mise x --
+      BAYTW: ../../plugins/bayt/runtime/bayt cache run --manifest {{.TASKFILE_DIR}}/bayt.test.json -- mise x --
     cmds:
     - '{{.BAYTW}} cargo test --lib --bins'
-    - defer: '{{if not .EXIT_CODE}}bayt fingerprint --manifest {{.TASKFILE_DIR}}/bayt.test.json --stamp-file .task/bayt/test.hash --update-stamp{{end}}'
+    - defer: '{{if not .EXIT_CODE}}../../plugins/bayt/runtime/bayt fingerprint --manifest {{.TASKFILE_DIR}}/bayt.test.json --stamp-file .task/bayt/test.hash --update-stamp{{end}}'
 version: '3'
