@@ -1,6 +1,6 @@
 # generated from bayt.cue — do not edit
 include:
-- path: ./compose.build_outs.yaml
+- path: ./compose.build.yaml
   required: false
 - path: ./compose.build.closure.yaml
   required: false

@@ -1,6 +1,6 @@
 # generated from bayt.cue — do not edit
 include:
-- path: ./compose.integrate_srcs.yaml
+- path: ./compose.integrate.yaml
   required: false
 - path: ./compose.build_srcs.closure.yaml
   required: false

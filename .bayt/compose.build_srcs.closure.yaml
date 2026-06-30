@@ -1,4 +1,4 @@
 # generated from bayt.cue — do not edit
 include:
-- path: ./compose.build_srcs.yaml
+- path: ./compose.build.yaml
   required: false

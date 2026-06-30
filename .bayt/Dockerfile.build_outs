@@ -1,4 +1,0 @@
-# generated from bayt.cue — do not edit
-FROM scratch AS build_outs
-WORKDIR /monorepo/services/boxer
-COPY --from=services_boxer-build --parents /monorepo/services/boxer/target/debug/boxer /

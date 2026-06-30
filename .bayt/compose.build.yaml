@@ -14,3 +14,29 @@ services:
         cache-to:
         - type=registry,ref=ghcr.io/worldsense/trash/boxer-cache:v1-${CACHE_SCOPE:-unscoped}-build,mode=min,image-manifest=true,oci-mediatypes=true
     image: bayt-services_boxer-build:${BAYT_IMAGE_TAG:-latest}
+  services_boxer-build_srcs:
+    build:
+      context: ..
+      dockerfile: .bayt/Dockerfile.build
+      target: build_srcs
+      x-bake:
+        cache-from:
+        - type=registry,ref=ghcr.io/worldsense/trash/boxer-cache:v1-${CACHE_SCOPE:-unscoped}-services_boxer-build_srcs
+        - type=registry,ref=ghcr.io/worldsense/trash/boxer-cache:v1-${CACHE_SCOPE_FALLBACK:-unscoped}-services_boxer-build_srcs
+        cache-to:
+        - type=registry,ref=ghcr.io/worldsense/trash/boxer-cache:v1-${CACHE_SCOPE:-unscoped}-services_boxer-build_srcs,mode=max,image-manifest=true,oci-mediatypes=true
+    image: bayt-services_boxer-build_srcs:latest
+  services_boxer-build_outs:
+    build:
+      context: ..
+      dockerfile: .bayt/Dockerfile.build
+      target: build_outs
+      additional_contexts:
+        services_boxer-build: service:services_boxer-build
+      x-bake:
+        cache-from:
+        - type=registry,ref=ghcr.io/worldsense/trash/boxer-cache:v1-${CACHE_SCOPE:-unscoped}-services_boxer-build_outs
+        - type=registry,ref=ghcr.io/worldsense/trash/boxer-cache:v1-${CACHE_SCOPE_FALLBACK:-unscoped}-services_boxer-build_outs
+        cache-to:
+        - type=registry,ref=ghcr.io/worldsense/trash/boxer-cache:v1-${CACHE_SCOPE:-unscoped}-services_boxer-build_outs,mode=min,image-manifest=true,oci-mediatypes=true
+    image: bayt-services_boxer-build_outs:latest

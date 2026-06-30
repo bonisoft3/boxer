@@ -5,3 +5,15 @@ COPY --parents src/**/* Cargo.toml Cargo.lock ./
 RUN ["mise", "x", "--", "cargo", "build"]
 COPY Taskfile.yml ./Taskfile.yml
 COPY .bayt/Taskfile.yml .bayt/Taskfile.build.yaml .bayt/bayt.build.json .bayt/init.gradle.kts ./.bayt/
+
+FROM busybox:musl@sha256:03db190ed4c1ceb1c55d179a0940e2d71d42130636a780272629735893292223 AS build_ctxs
+WORKDIR /monorepo/services/boxer
+COPY --parents src/**/* Cargo.toml Cargo.lock ./
+ARG SOURCE_DATE_EPOCH
+RUN touch -hd @${SOURCE_DATE_EPOCH:-0} /tmp/ref && find /monorepo -newer /tmp/ref -exec touch -hd @${SOURCE_DATE_EPOCH:-0} {} + && rm /tmp/ref
+FROM scratch AS build_srcs
+COPY --from=build_ctxs /monorepo /monorepo
+
+FROM scratch AS build_outs
+WORKDIR /monorepo/services/boxer
+COPY --from=services_boxer-build --parents /monorepo/services/boxer/target/debug/boxer /
