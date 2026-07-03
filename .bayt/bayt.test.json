@@ -39,6 +39,7 @@
     "preconditions": []
   },
   "visibility": "internal",
+  "class": "build",
   "emitsSrcs": false,
   "deps": [
     "build"
@@ -58,7 +59,8 @@
           "target/debug/boxer"
         ],
         "exclude": []
-      }
+      },
+      "class": "build"
     },
     {
       "name": "setup",
@@ -67,7 +69,8 @@
       "outs": {
         "globs": [],
         "exclude": []
-      }
+      },
+      "class": "build"
     }
   ],
   "cmds": [

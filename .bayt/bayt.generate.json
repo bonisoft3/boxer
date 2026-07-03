@@ -35,6 +35,7 @@
     "preconditions": []
   },
   "visibility": "internal",
+  "class": "build",
   "emitsSrcs": false,
   "deps": [],
   "transitiveDeps": [],

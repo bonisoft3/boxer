@@ -14,6 +14,10 @@ RUN touch -hd @${SOURCE_DATE_EPOCH:-0} /tmp/ref && find /monorepo -newer /tmp/re
 FROM scratch AS build_srcs
 COPY --from=build_ctxs /monorepo /monorepo
 
-FROM scratch AS build_outs
+FROM busybox:musl@sha256:03db190ed4c1ceb1c55d179a0940e2d71d42130636a780272629735893292223 AS build_outs_ctxs
 WORKDIR /monorepo/services/boxer
 COPY --from=services_boxer-build --parents /monorepo/services/boxer/target/debug/boxer /
+ARG SOURCE_DATE_EPOCH
+RUN touch -hd @${SOURCE_DATE_EPOCH:-0} /tmp/ref && find /monorepo -newer /tmp/ref -exec touch -hd @${SOURCE_DATE_EPOCH:-0} {} + && rm /tmp/ref
+FROM scratch AS build_outs
+COPY --from=build_outs_ctxs /monorepo /monorepo

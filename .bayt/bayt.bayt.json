@@ -21,6 +21,7 @@
     "exclude": []
   },
   "env": {},
+  "class": "build",
   "visibility": "public",
   "deps": [],
   "transitiveDeps": [],

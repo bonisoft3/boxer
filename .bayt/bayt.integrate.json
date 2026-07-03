@@ -72,6 +72,7 @@
         "exclude": []
       },
       "env": {},
+      "class": "build",
       "visibility": "internal",
       "deps": [],
       "transitiveDeps": [],
@@ -102,6 +103,7 @@
         "exclude": []
       },
       "env": {},
+      "class": "build",
       "visibility": "internal",
       "deps": [],
       "transitiveDeps": [
@@ -120,7 +122,8 @@
               "Cargo.lock"
             ],
             "exclude": []
-          }
+          },
+          "class": "build"
         }
       ],
       "chainedDeps": [],
@@ -138,6 +141,7 @@
     "preconditions": []
   },
   "visibility": "internal",
+  "class": "build",
   "emitsSrcs": true,
   "deps": [
     "build"
@@ -157,7 +161,8 @@
           "target/debug/boxer"
         ],
         "exclude": []
-      }
+      },
+      "class": "build"
     },
     {
       "name": "setup",
@@ -166,7 +171,8 @@
       "outs": {
         "globs": [],
         "exclude": []
-      }
+      },
+      "class": "build"
     }
   ],
   "cmds": [
