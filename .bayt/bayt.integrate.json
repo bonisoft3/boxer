@@ -27,6 +27,7 @@
       "ref": ":build",
       "name": "services_boxer-build"
     },
+    "add": [],
     "mounts": [],
     "secrets": {},
     "extra_hosts": [],

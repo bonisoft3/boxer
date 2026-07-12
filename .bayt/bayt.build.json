@@ -21,6 +21,7 @@
       "ref": ":setup",
       "name": "services_boxer-setup"
     },
+    "add": [],
     "mounts": [],
     "secrets": {},
     "extra_hosts": [],
