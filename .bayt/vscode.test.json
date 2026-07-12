@@ -9,7 +9,7 @@
       },
       "label": "test",
       "type": "shell",
-      "command": "task bayt:test",
+      "command": "task -t .bayt/Taskfile.yml bayt:test",
       "options": {
         "cwd": "${workspaceFolder}/services/boxer"
       }

@@ -9,7 +9,7 @@
       },
       "label": "build",
       "type": "shell",
-      "command": "task bayt:build",
+      "command": "task -t .bayt/Taskfile.yml bayt:build",
       "options": {
         "cwd": "${workspaceFolder}/services/boxer"
       }
