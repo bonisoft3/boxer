@@ -3,7 +3,7 @@ FROM services_boxer-build AS integrate
 WORKDIR /monorepo/services/boxer
 COPY --parents tests/**/* ./
 RUN ["mise", "x", "--", "cargo", "test", "--tests"]
-COPY .bayt/Taskfile.yml .bayt/Taskfile.bayt.yml .bayt/Taskfile.integrate.yaml .bayt/bayt.integrate.json .bayt/init.gradle.kts ./.bayt/
+COPY .bayt/Taskfile.yml .bayt/Taskfile.bayt.yml .bayt/Taskfile.integrate.yaml .bayt/bayt.integrate.json ./.bayt/
 
 FROM busybox:musl@sha256:03db190ed4c1ceb1c55d179a0940e2d71d42130636a780272629735893292223 AS integrate_ctxs
 WORKDIR /monorepo/services/boxer
