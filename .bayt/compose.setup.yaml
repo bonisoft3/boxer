@@ -12,3 +12,4 @@ services:
         cache-to:
         - type=registry,ref=ghcr.io/worldsense/trash/boxer-cache:v1-${CACHE_SCOPE:-unscoped}-setup,mode=min,image-manifest=true,oci-mediatypes=true
     image: bayt-services_boxer-setup:${BAYT_IMAGE_TAG:-latest}
+    scale: 0

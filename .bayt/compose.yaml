@@ -7,11 +7,18 @@ services:
     extends:
       file: ./compose.setup.yaml
       service: services_boxer-setup
+    profiles:
+    - setup
   build:
     extends:
       file: ./compose.build.yaml
       service: services_boxer-build
+    profiles:
+    - build
   integrate:
     extends:
       file: ./compose.integrate.yaml
       service: services_boxer-integrate
+    profiles:
+    - integrate
+    scale: 1
