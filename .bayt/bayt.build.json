@@ -53,6 +53,43 @@
   },
   "env": {},
   "synthetics": {
+    "bayt": {
+      "name": "build_bayt",
+      "project": "services_boxer",
+      "dir": "services/boxer",
+      "activate": "",
+      "srcs": {
+        "globs": [],
+        "exclude": []
+      },
+      "outs": {
+        "globs": [
+          ".bayt/compose.build.yaml",
+          ".bayt/Dockerfile.build",
+          ".bayt/bayt.build.json",
+          ".bayt/Taskfile.yml",
+          ".bayt/Taskfile.bayt.yml",
+          ".bayt/Taskfile.build.yaml"
+        ],
+        "exclude": []
+      },
+      "env": {},
+      "class": "build",
+      "visibility": "internal",
+      "deps": [],
+      "transitiveDeps": [],
+      "transitiveCrossDeps": [],
+      "chainedDeps": [],
+      "cmds": [],
+      "cache": {
+        "full": false,
+        "similar": false
+      },
+      "upClosure": [
+        "services/boxer/.bayt/compose.build.yaml",
+        "services/boxer/.bayt/compose.setup.yaml"
+      ]
+    },
     "outs": {
       "name": "build_outs",
       "project": "services_boxer",
@@ -79,7 +116,11 @@
       "cache": {
         "full": false,
         "similar": false
-      }
+      },
+      "upClosure": [
+        "services/boxer/.bayt/compose.build.yaml",
+        "services/boxer/.bayt/compose.setup.yaml"
+      ]
     },
     "srcs": {
       "name": "build_srcs",
@@ -111,7 +152,11 @@
       "cache": {
         "full": false,
         "similar": false
-      }
+      },
+      "upClosure": [
+        "services/boxer/.bayt/compose.build.yaml",
+        "services/boxer/.bayt/compose.setup.yaml"
+      ]
     }
   },
   "taskfile": {
@@ -130,6 +175,11 @@
     "setup"
   ],
   "transitiveCrossDeps": [],
+  "up": false,
+  "upClosure": [
+    "services/boxer/.bayt/compose.build.yaml",
+    "services/boxer/.bayt/compose.setup.yaml"
+  ],
   "chainedDeps": [
     {
       "name": "setup",

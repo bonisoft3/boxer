@@ -6,17 +6,3 @@ include:
   required: false
 - path: ./compose.integrate.yaml
   required: false
-services:
-  services_boxer-bayt:
-    build:
-      context: ..
-      dockerfile: .bayt/Dockerfile.bayt
-      target: bayt
-      x-bake:
-        cache-from:
-        - type=registry,ref=ghcr.io/worldsense/trash/boxer-cache:v1-${CACHE_SCOPE:-unscoped}-services_boxer-bayt
-        - type=registry,ref=ghcr.io/worldsense/trash/boxer-cache:v1-${CACHE_SCOPE_FALLBACK:-unscoped}-services_boxer-bayt
-        cache-to:
-        - type=registry,ref=ghcr.io/worldsense/trash/boxer-cache:v1-${CACHE_SCOPE:-unscoped}-services_boxer-bayt,mode=max,image-manifest=true,oci-mediatypes=true
-    image: bayt-services_boxer-bayt:latest
-    scale: 0

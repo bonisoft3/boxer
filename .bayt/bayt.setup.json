@@ -51,6 +51,44 @@
     "exclude": []
   },
   "env": {},
+  "synthetics": {
+    "bayt": {
+      "name": "setup_bayt",
+      "project": "services_boxer",
+      "dir": "services/boxer",
+      "activate": "",
+      "srcs": {
+        "globs": [],
+        "exclude": []
+      },
+      "outs": {
+        "globs": [
+          ".bayt/compose.setup.yaml",
+          ".bayt/Dockerfile.setup",
+          ".bayt/bayt.setup.json",
+          ".bayt/Taskfile.yml",
+          ".bayt/Taskfile.bayt.yml",
+          ".bayt/Taskfile.setup.yaml"
+        ],
+        "exclude": []
+      },
+      "env": {},
+      "class": "build",
+      "visibility": "internal",
+      "deps": [],
+      "transitiveDeps": [],
+      "transitiveCrossDeps": [],
+      "chainedDeps": [],
+      "cmds": [],
+      "cache": {
+        "full": false,
+        "similar": false
+      },
+      "upClosure": [
+        "services/boxer/.bayt/compose.setup.yaml"
+      ]
+    }
+  },
   "taskfile": {
     "run": "when_changed",
     "silent": false,
@@ -63,6 +101,10 @@
   "deps": [],
   "transitiveDeps": [],
   "transitiveCrossDeps": [],
+  "up": false,
+  "upClosure": [
+    "services/boxer/.bayt/compose.setup.yaml"
+  ],
   "chainedDeps": [],
   "cmds": [
     {

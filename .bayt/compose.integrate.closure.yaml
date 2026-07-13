@@ -1,0 +1,14 @@
+# generated from bayt.cue — do not edit
+include:
+- path: ../../../services/boxer/.bayt/compose.integrate.yaml
+  required: false
+- path: ../../../services/boxer/.bayt/compose.build.yaml
+  required: false
+- path: ../../../services/boxer/.bayt/compose.setup.yaml
+  required: false
+services:
+  bayt:
+    extends:
+      file: ./compose.integrate.yaml
+      service: services_boxer-integrate
+    scale: 1

@@ -13,3 +13,16 @@ services:
         - type=registry,ref=ghcr.io/worldsense/trash/boxer-cache:v1-${CACHE_SCOPE:-unscoped}-setup,mode=min,image-manifest=true,oci-mediatypes=true
     image: bayt-services_boxer-setup:${BAYT_IMAGE_TAG:-latest}
     scale: 0
+  services_boxer-setup_bayt:
+    build:
+      context: ..
+      dockerfile: .bayt/Dockerfile.setup
+      target: setup_bayt
+      x-bake:
+        cache-from:
+        - type=registry,ref=ghcr.io/worldsense/trash/boxer-cache:v1-${CACHE_SCOPE:-unscoped}-services_boxer-setup_bayt
+        - type=registry,ref=ghcr.io/worldsense/trash/boxer-cache:v1-${CACHE_SCOPE_FALLBACK:-unscoped}-services_boxer-setup_bayt
+        cache-to:
+        - type=registry,ref=ghcr.io/worldsense/trash/boxer-cache:v1-${CACHE_SCOPE:-unscoped}-services_boxer-setup_bayt,mode=max,image-manifest=true,oci-mediatypes=true
+    image: bayt-services_boxer-setup_bayt:latest
+    scale: 0

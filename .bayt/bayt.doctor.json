@@ -40,6 +40,8 @@
   "deps": [],
   "transitiveDeps": [],
   "transitiveCrossDeps": [],
+  "up": false,
+  "upClosure": [],
   "chainedDeps": [],
   "cmds": [
     {

@@ -49,6 +49,11 @@
     "setup"
   ],
   "transitiveCrossDeps": [],
+  "up": false,
+  "upClosure": [
+    "services/boxer/.bayt/compose.build.yaml",
+    "services/boxer/.bayt/compose.setup.yaml"
+  ],
   "chainedDeps": [
     {
       "name": "build",

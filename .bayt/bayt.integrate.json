@@ -16,6 +16,7 @@
     }
   },
   "compose": {
+    "up": true,
     "environment": {},
     "ports": [],
     "volumes": [],
@@ -57,6 +58,45 @@
   },
   "env": {},
   "synthetics": {
+    "bayt": {
+      "name": "integrate_bayt",
+      "project": "services_boxer",
+      "dir": "services/boxer",
+      "activate": "",
+      "srcs": {
+        "globs": [],
+        "exclude": []
+      },
+      "outs": {
+        "globs": [
+          ".bayt/compose.integrate.yaml",
+          ".bayt/Dockerfile.integrate",
+          ".bayt/bayt.integrate.json",
+          ".bayt/Taskfile.yml",
+          ".bayt/Taskfile.bayt.yml",
+          ".bayt/Taskfile.integrate.yaml",
+          ".bayt/compose.integrate.closure.yaml"
+        ],
+        "exclude": []
+      },
+      "env": {},
+      "class": "build",
+      "visibility": "internal",
+      "deps": [],
+      "transitiveDeps": [],
+      "transitiveCrossDeps": [],
+      "chainedDeps": [],
+      "cmds": [],
+      "cache": {
+        "full": false,
+        "similar": false
+      },
+      "upClosure": [
+        "services/boxer/.bayt/compose.integrate.yaml",
+        "services/boxer/.bayt/compose.build.yaml",
+        "services/boxer/.bayt/compose.setup.yaml"
+      ]
+    },
     "outs": {
       "name": "integrate_outs",
       "project": "services_boxer",
@@ -83,7 +123,12 @@
       "cache": {
         "full": false,
         "similar": false
-      }
+      },
+      "upClosure": [
+        "services/boxer/.bayt/compose.integrate.yaml",
+        "services/boxer/.bayt/compose.build.yaml",
+        "services/boxer/.bayt/compose.setup.yaml"
+      ]
     },
     "srcs": {
       "name": "integrate_srcs",
@@ -132,7 +177,12 @@
       "cache": {
         "full": false,
         "similar": false
-      }
+      },
+      "upClosure": [
+        "services/boxer/.bayt/compose.integrate.yaml",
+        "services/boxer/.bayt/compose.build.yaml",
+        "services/boxer/.bayt/compose.setup.yaml"
+      ]
     }
   },
   "taskfile": {
@@ -152,6 +202,12 @@
     "setup"
   ],
   "transitiveCrossDeps": [],
+  "up": true,
+  "upClosure": [
+    "services/boxer/.bayt/compose.integrate.yaml",
+    "services/boxer/.bayt/compose.build.yaml",
+    "services/boxer/.bayt/compose.setup.yaml"
+  ],
   "chainedDeps": [
     {
       "name": "build",
