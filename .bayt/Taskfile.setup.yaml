@@ -1,6 +1,8 @@
 # generated from bayt.cue — do not edit
 tasks:
   default:
+    env:
+      MISE_ALWAYS_KEEP_DOWNLOAD: '1'
     status:
     - ../../plugins/bayt/runtime/bayt fingerprint --manifest {{.TASKFILE_DIR}}/bayt.setup.json --stamp-file .task/bayt/setup.hash
     vars:

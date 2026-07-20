@@ -197,6 +197,9 @@
   "deps": [
     "build"
   ],
+  "sameProjectDeps": [
+    "build"
+  ],
   "transitiveDeps": [
     "build",
     "setup"

@@ -38,6 +38,7 @@
   "class": "build",
   "emitsSrcs": false,
   "deps": [],
+  "sameProjectDeps": [],
   "transitiveDeps": [],
   "transitiveCrossDeps": [],
   "up": false,

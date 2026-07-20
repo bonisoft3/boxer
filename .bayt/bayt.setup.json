@@ -50,7 +50,9 @@
     "globs": [],
     "exclude": []
   },
-  "env": {},
+  "env": {
+    "MISE_ALWAYS_KEEP_DOWNLOAD": "1"
+  },
   "synthetics": {
     "bayt": {
       "name": "setup_bayt",
@@ -99,6 +101,7 @@
   "class": "build",
   "emitsSrcs": false,
   "deps": [],
+  "sameProjectDeps": [],
   "transitiveDeps": [],
   "transitiveCrossDeps": [],
   "up": false,
@@ -119,6 +122,16 @@
         "defaultExclude": null
       },
       "do": "mise install",
+      "dockerfile": {
+        "mounts": [
+          {
+            "type": "cache",
+            "target": "/root/.local/share/mise/downloads",
+            "scope": "project",
+            "required": false
+          }
+        ]
+      },
       "name": "builtin",
       "shell": "exec",
       "stop": false
