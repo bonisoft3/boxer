@@ -27,10 +27,12 @@
     "globs": [],
     "exclude": []
   },
+  "state": {
+    "globs": []
+  },
   "env": {},
   "taskfile": {
     "run": "always",
-    "silent": false,
     "incremental": true,
     "preconditions": []
   },
@@ -65,8 +67,6 @@
   "vscode": {
     "group": {
       "kind": "none"
-    },
-    "dependsOn": [],
-    "dependsOrder": "sequence"
+    }
   }
 }

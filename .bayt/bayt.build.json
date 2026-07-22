@@ -51,6 +51,9 @@
     ],
     "exclude": []
   },
+  "state": {
+    "globs": []
+  },
   "env": {},
   "synthetics": {
     "bayt": {
@@ -161,7 +164,6 @@
   },
   "taskfile": {
     "run": "when_changed",
-    "silent": false,
     "incremental": true,
     "preconditions": []
   },
@@ -221,8 +223,6 @@
     "group": {
       "kind": "build",
       "isDefault": true
-    },
-    "dependsOn": [],
-    "dependsOrder": "sequence"
+    }
   }
 }

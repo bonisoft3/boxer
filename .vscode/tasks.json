@@ -1,31 +1,29 @@
 {
-	"version": "2.0.0",
-	"tasks": [
-		{
-			"label": "build",
-			"type": "shell",
-			"command": "cargo build",
-
-			"group": {
-				"kind": "build",
-				"isDefault": true
-			},
-			"problemMatcher": [
-				"$rustc"
-			]
-		},
-		{
-			"label": "test",
-			"type": "shell",
-			"command": "cargo test",
-
-			"group": {
-				"kind": "test",
-				"isDefault": true
-			},
-			"problemMatcher": [
-				"$rustc"
-			]
-		}
-	]
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "label": "build",
+      "type": "shell",
+      "command": "mise x -- cargo build",
+      "options": {
+        "cwd": "${workspaceFolder}/services/boxer"
+      }
+    },
+    {
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "label": "test",
+      "type": "shell",
+      "command": "mise x -- cargo test --lib --bins",
+      "options": {
+        "cwd": "${workspaceFolder}/services/boxer"
+      }
+    }
+  ]
 }

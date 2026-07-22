@@ -84,5 +84,3 @@ _boxer: bayt.#project & {
 
 project: _boxer
 
-depManifestsIn: {[string]: _}
-_render: (bayt.#render & {project: _boxer, depManifests: depManifestsIn})

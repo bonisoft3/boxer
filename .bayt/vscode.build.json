@@ -3,13 +3,13 @@
   "version": "2.0.0",
   "tasks": [
     {
+      "command": "mise x -- cargo build",
       "group": {
         "kind": "build",
         "isDefault": true
       },
       "label": "build",
       "type": "shell",
-      "command": "task -t .bayt/Taskfile.yml bayt:build",
       "options": {
         "cwd": "${workspaceFolder}/services/boxer"
       }
