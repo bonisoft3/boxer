@@ -5,6 +5,8 @@ services:
       context: ..
       dockerfile: .bayt/Dockerfile.setup
       target: setup
+      args:
+        BUILDKIT_SYNTAX: docker/dockerfile:1.24@sha256:87999aa3d42bdc6bea60565083ee17e86d1f3339802f543c0d03998580f9cb89
       x-bake:
         cache-from:
         - type=registry,ref=ghcr.io/worldsense/trash/boxer-cache:v1-${CACHE_SCOPE:-unscoped}-setup
@@ -18,6 +20,8 @@ services:
       context: ..
       dockerfile: .bayt/Dockerfile.setup
       target: setup_bayt
+      args:
+        BUILDKIT_SYNTAX: docker/dockerfile:1.24@sha256:87999aa3d42bdc6bea60565083ee17e86d1f3339802f543c0d03998580f9cb89
       x-bake:
         cache-from:
         - type=registry,ref=ghcr.io/worldsense/trash/boxer-cache:v1-${CACHE_SCOPE:-unscoped}-services_boxer-setup_bayt
