@@ -8,7 +8,7 @@ RUN zypper -n install findutils=4.10.0-160000.2.2 which=2.23-160000.2.2
 RUN zypper -n install gcc=15-160000.2.2
 ENV MISE_ALWAYS_KEEP_DOWNLOAD=1
 COPY --parents [m]ise.toml [.]mise.toml [m]ise.lock ./
-RUN --mount=type=cache,target=/root/.local/share/mise/downloads,id=services_boxer:/root/.local/share/mise/downloads,sharing=shared ["mise", "install"]
+RUN --mount=type=cache,target=/root/.local/share/mise/downloads,id=services_boxer:/root/.local/share/mise/downloads,sharing=shared --mount=type=cache,target=/mise-tarball-store,id=/mise-tarball-store,sharing=shared d=/root/.local/share/mise/downloads; s=/mise-tarball-store; mkdir -p "$d" "$s"; cp -r "$s"/. "$d"/ 2>/dev/null || true; mise install || exit; cd "$d" && for f in */*/*; do [ -f "$f" ] || continue; o="$s/$f"; [ -e "$o" ] && continue; mkdir -p "$(dirname "$o")"; t="$(mktemp "$(dirname "$o")/.pXXXXXX")" && cp "$f" "$t" && mv -f "$t" "$o"; done; :
 COPY .bayt/Taskfile.yml .bayt/Taskfile.bayt.yml .bayt/Taskfile.setup.yaml .bayt/bayt.setup.json ./.bayt/
 
 FROM busybox:musl@sha256:03db190ed4c1ceb1c55d179a0940e2d71d42130636a780272629735893292223 AS setup_bayt_ctxs
