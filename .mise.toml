@@ -13,4 +13,5 @@ aqua.slsa = false
 aqua.minisign = false
 
 [tools]
+"github:jdx/pitchfork" = "v2.18.0"   # for detached sayt launch
 rust = "1.94.1"

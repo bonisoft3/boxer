@@ -1,8 +1,10 @@
 say:
   lint:
     do: "cargo clippy -- -D warnings && cargo fmt --check"
+  # launch must detach, but cargo run is foreground.
+  # pitchfork's supervisor doesn't inherit our mise env.
   launch:
-    do: "cargo run"
+    do: '^mise x -- pitchfork run boxer -f -o "health endpoint listening" -- mise x -- cargo run'
   release:
     do: "goreleaser release --snapshot --clean"
   integrate:
