@@ -1,7 +1,6 @@
 {
   "_generated_from": "bayt.cue (do not edit)",
   "bake": {
-    "push": false,
     "platforms": [],
     "tags": [],
     "args": {},
@@ -17,6 +16,7 @@
   },
   "compose": {
     "up": true,
+    "manual": true,
     "environment": {},
     "ports": [],
     "volumes": [],
@@ -83,7 +83,6 @@
         "exclude": []
       },
       "env": {},
-      "class": "build",
       "visibility": "internal",
       "deps": [],
       "transitiveDeps": [],
@@ -116,7 +115,6 @@
         "exclude": []
       },
       "env": {},
-      "class": "build",
       "visibility": "internal",
       "deps": [],
       "transitiveDeps": [],
@@ -152,7 +150,6 @@
         "exclude": []
       },
       "env": {},
-      "class": "build",
       "visibility": "internal",
       "deps": [],
       "transitiveDeps": [
@@ -171,8 +168,7 @@
               "Cargo.lock"
             ],
             "exclude": []
-          },
-          "class": "build"
+          }
         }
       ],
       "chainedDeps": [],
@@ -194,7 +190,6 @@
     "preconditions": []
   },
   "visibility": "internal",
-  "class": "build",
   "emitsSrcs": true,
   "deps": [
     "build"
@@ -207,7 +202,6 @@
     "setup"
   ],
   "transitiveCrossDeps": [],
-  "up": true,
   "upClosure": [
     "services/boxer/.bayt/compose.integrate.yaml",
     "services/boxer/.bayt/compose.build.yaml",
@@ -223,8 +217,7 @@
           "target/debug/boxer"
         ],
         "exclude": []
-      },
-      "class": "build"
+      }
     },
     {
       "name": "setup",
@@ -233,8 +226,7 @@
       "outs": {
         "globs": [],
         "exclude": []
-      },
-      "class": "build"
+      }
     }
   ],
   "cmds": [

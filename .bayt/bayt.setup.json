@@ -1,7 +1,6 @@
 {
   "_generated_from": "bayt.cue (do not edit)",
   "bake": {
-    "push": false,
     "platforms": [],
     "tags": [],
     "args": {},
@@ -78,7 +77,6 @@
         "exclude": []
       },
       "env": {},
-      "class": "build",
       "visibility": "internal",
       "deps": [],
       "transitiveDeps": [],
@@ -100,13 +98,11 @@
     "preconditions": []
   },
   "visibility": "internal",
-  "class": "build",
   "emitsSrcs": false,
   "deps": [],
   "sameProjectDeps": [],
   "transitiveDeps": [],
   "transitiveCrossDeps": [],
-  "up": false,
   "upClosure": [
     "services/boxer/.bayt/compose.setup.yaml"
   ],
