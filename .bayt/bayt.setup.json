@@ -90,6 +90,34 @@
       "upClosure": [
         "services/boxer/.bayt/compose.setup.yaml"
       ]
+    },
+    "outs": {
+      "name": "setup_outs",
+      "project": "services_boxer",
+      "dir": "services/boxer",
+      "activate": "",
+      "srcs": {
+        "globs": [],
+        "exclude": []
+      },
+      "outs": {
+        "globs": [],
+        "exclude": []
+      },
+      "env": {},
+      "visibility": "internal",
+      "deps": [],
+      "transitiveDeps": [],
+      "transitiveCrossDeps": [],
+      "chainedDeps": [],
+      "cmds": [],
+      "cache": {
+        "full": false,
+        "similar": false
+      },
+      "upClosure": [
+        "services/boxer/.bayt/compose.setup.yaml"
+      ]
     }
   },
   "taskfile": {
