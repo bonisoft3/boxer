@@ -16,6 +16,7 @@
   },
   "dockerfile": {
     "preamble": [],
+    "preambleCopyContexts": [],
     "from": {
       "ref": ":setup",
       "name": "services_boxer-setup"

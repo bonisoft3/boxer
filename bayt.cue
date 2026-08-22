@@ -16,6 +16,7 @@ package boxer
 import (
 	bayt "bonisoft.org/plugins/bayt/core:bayt"
 	mise "bonisoft.org/plugins/bayt/stacks/mise"
+	zypper "bonisoft.org/plugins/bayt/distros/zypper"
 	sayt "bonisoft.org/plugins/bayt/stacks/sayt"
 )
 
@@ -35,9 +36,9 @@ _boxer: bayt.#project & {
 			// aws-lc-rs, ...); opensuse/leap base has no `cc` by default.
 			// build/test/integrate FROM-chain off setup and inherit it.
 			dockerfile: bayt.nubox
-			dockerfile: preamble: [
-				"RUN zypper -n install gcc=15-160000.2.2",
-			]
+			dockerfile: defaultPreamble: "gcc": (zypper.#install & {
+				pkgs: ["gcc=15-160000.2.2"]
+			}).out
 		}
 		"doctor": sayt.doctor & mise.doctor
 

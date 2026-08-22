@@ -24,6 +24,7 @@
   },
   "dockerfile": {
     "preamble": [],
+    "preambleCopyContexts": [],
     "from": {
       "ref": ":build",
       "name": "services_boxer-build"
