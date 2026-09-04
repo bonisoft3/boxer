@@ -24,4 +24,4 @@ includes:
     taskfile: ./Taskfile.generate.yaml
     dir: ../
     optional: true
-version: '3'
+version: "3"
